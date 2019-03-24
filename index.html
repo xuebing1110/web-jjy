@@ -10,67 +10,67 @@
     </style>
   </head>
   <body>
-    <h1>JJYシミュレータWeb版</h1>
+    <h1>JJY模拟器网页版</h1>
     <p>
-      Web Audioを駆使して標準電波JJYの信号を再現します。
-      以下の「Start」ボタンを押すと信号の送信が始まります。
+      我们重现了充分利用Web Audio的标准电波JJY的信号。
+      按下以下“开始”按钮时，信号传输开始。
     </p>
 
     <button id="control-button">Start</button> <span id="time"></span>
     <div>
       <canvas id="canvas" width="1000" height="200"></canvas>
     </div>
-    <label><input id="summer-time" type="checkbox">夏時間を有効にする</label>
+    <label><input id="summer-time" type="checkbox">启用夏令时</label>
     <script src="jjy.js"></script>
 
-    <h2>このソフトについて</h2>
+    <h2>关于这个软件</h2>
     <p>
-      電波時計の時刻合わせには、<a href="http://jjy.nict.go.jp/jjy/">標準電波JJY</a>と呼ばれる
-      時刻に関する情報を送信している電波が使われています。
-      このシミュレータは、この電波をブラウザ上で再現し、標準電波が届かない環境でも電波時計の時刻合わせを可能にします。
+      它被称为<a href="http://jjy.nict.go.jp/jjy/">标准无线电波JJY </a>，用于无线电时钟的时间同步
+      使用发送关于时间的信息的无线电波。
+      该模拟器在浏览器上再现该无线电波，并且即使在标准无线电波未到达的环境中也能够实现无线电时钟的时间同步。
     </p>
 
-    <h2>使い方</h2>
+    <h2>使用方法</h2>
     <p>
-      パソコンのイヤホンジャックにアンテナ(普通のイヤホンで十分です)を接続し、電波時計の近くに置きます。
-      音量を最大にし、「Start」ボタンを押すと信号が送信されます。
-      電波時計を強制受信モードにし、時刻が設定されるのを待ちましょう。
+      将天线（普通耳机足够）连接到计算机上的耳机插孔，并将其放在无线电时钟附近。
+      最大化音量，然后按“开始”按钮发送信号。
+      将无线电时钟置于强制接收模式并等待设置时间。
     </p>
     <p>
-      このページではパソコン自体の時刻を調整する機能はないので、
-      事前にNTPでパソコン自体の時刻設定を行っておくといいと思います。
+      由于此页面没有调整PC本身时间的功能，
+      我认为最好事先用NTP设置个人计算机的时间。
     </p>
 
     <h2>免責事項</h2>
     <p>
-      ※ 利用の結果生じた損害について、一切責任を負いません。
+      ※ 对于因使用而造成的任何损害，我们概不负责。
     </p>
 
-    <h2>動作環境</h2>
-    <p>MacBook Air + Google Chrome 48.0.2564.116 + CITIZEN 8RZ152 で動作を確認しています。</p>
+    <h2>运行环境</h2>
+    <p>MacBook Air +谷歌Chrome 48.0.2564.116 + CITIZEN 8RZ152已确认操作。</p>
 
     <h2>原理</h2>
     <p>
-      標準電波は40kHzまたは60kHzの電波です。
-      電気が流れればそこには必ず電波が発生するので、イヤホンにこの周波数の信号を音声として流せば、それだけで立派なアンテナになります。
+      标准无线电波是40 kHz或60 kHz的无线电波。
+      如果电流流动，总会有无线电波，所以如果你把这个频率的信号作为声音发送到耳机，它本身就是一个好的天线。
     </p>
     <p>
-      ただし、一般的な音声アンプは人間の可聴域である20kHz以上の周波数の再生には適していません。
-      そこで、歪んだ波形に含まれる高調波を利用します。
-      ボリュームを大きくして音が割れた状態になると、音声信号は矩形波に近いかたちになります。
-      13.333kHzの矩形波にはその3倍の39.999kHzの周波数成分が含まれるので、約40kHzの電波が出せるというわけです。
-      詳しくは<a href="http://www.starstonesoft.com/jjy_simulator.htm">フリーソフト電波時計用JJYシミュレータのページ</a>を参照してください。
+      但是，一般音频放大器不适合在20 kHz以上的频率播放，这是人类可听见的范围。
+      因此，我们使用失真波形中包含的谐波。
+      当音量增加并且声音被破坏时，音频信号的形状像方波。
+      13.333kHz方波包含39.999kHz的频率分量，是另一个的三倍，因此它可以发射大约40kHz的无线电波。
+      有关更多信息，请参阅<a href="http://www.starstonesoft.com/jjy_simulator.htm"> JJY模拟器获取免费软件无线电时钟</a>
     </p>
 
-    <h2>ライセンス</h2>
-    <p>MITライセンスで提供します。<a href="https://github.com/shogo82148/web-jjy/blob/gh-pages/LICENSE.md">LICENSE.md<a>を参照してください。</p>    
+    <h2>许可证</h2>
+    <p>由麻省理工学院许可提供。请参阅<a href="https://github.com/shogo82148/web-jjy/blob/gh-pages/LICENSE.md"> LICENSE.md <a></p>
 
-    <h2>関連リンク</h2>
+    <h2>相关链接</h2>
     <p>
       <ul>
         <li><a href="https://github.com/shogo82148/web-jjy">shogo82148/web-jjy</a></li>
-        <li><a href="https://shogo82148.github.io/blog/2016/03/29/web-jjy/">Webブラウザを使って電波を出してみた</a></li>
-        <li><a href="https://shogo82148.github.io/blog/2018/08/11/web-jjy-summer-time-support/">Web JJY が夏時間に対応しました</a></li>
+        <li><a href="https://shogo82148.github.io/blog/2016/03/29/web-jjy/">我尝试使用网络浏览器发送无线电波</a></li>
+        <li><a href="https://shogo82148.github.io/blog/2018/08/11/web-jjy-summer-time-support/">Web JJY现在支持夏令时</a></li>
       </ul>
     </p>
 
